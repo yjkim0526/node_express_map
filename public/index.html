@@ -40,16 +40,14 @@
         자전거 교통사고 다발지역 정보
       </div>
       <form id="frm">
-        <div id="main_search" class="lg:flex gap-4">
-          <label id="siDo" class="p-2" for="radius" value="27"
-            >대구광역시</label
-          >
-
+        <div id="main_search" class="lg:flex gap-2">
+          <label id="siDo" class="p-2" value="27">대구광역시</label>
           <select
             id="gugun"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="w-36 justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            aria-label="Default select example"
           >
-            <option selected>구군선택</option>
+            <option value="" selected>구군선택</option>
             <option value="200">남구</option>
             <option value="290">달서구</option>
             <option value="710">달성군</option>
@@ -62,11 +60,12 @@
           </select>
           <select
             id="year"
-            class="inline-flex w-28 justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            class="w-36 justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
             aria-label="Default select example"
           >
             <option value="" selected>년도선택</option>
           </select>
+
           <input
             type="button"
             class="text-white px-4 rounded-md bg-violet-500 cursor-pointer"
