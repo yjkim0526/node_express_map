@@ -7,32 +7,6 @@
     <title>자전거 교통사고 다발지역 정보</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="main.css" />
-    <style>
-      #map {
-        width: 70%;
-        height: 600px;
-        margin-top: 10px;
-        border: 1px solid;
-        border-color: darkgray;
-      }
-
-      @media (max-width: 768px) {
-        #map {
-          width: 80%;
-          height: 500px;
-        }
-      }
-
-      @media (max-width: 640px) {
-        #map {
-          width: 80%;
-          height: 400px;
-        }
-        #main_search {
-          font-size: small;
-        }
-      }
-    </style>
   </head>
   <body>
     <div class="p-6">
@@ -40,14 +14,14 @@
         자전거 교통사고 다발지역 정보
       </div>
       <form id="frm">
-        <div id="main_search" class="lg:flex gap-2">
-          <label id="siDo" class="p-2" value="27">대구광역시</label>
+        <div id="main_search">
+          <label id="siDo" class="p-2 font-bold">대구광역시</label>
           <select
             id="gugun"
-            class="w-36 justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            aria-label="Default select example"
+            name="gugun"
+            class="border border-slate-300 p-1 rounded-md"
           >
-            <option value="" selected>구군선택</option>
+            <option value="">구군선택</option>
             <option value="200">남구</option>
             <option value="290">달서구</option>
             <option value="710">달성군</option>
@@ -60,15 +34,15 @@
           </select>
           <select
             id="year"
-            class="w-36 justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            aria-label="Default select example"
+            name="year"
+            class="border border-slate-300 p-1 rounded-md"
           >
-            <option value="" selected>년도선택</option>
+            <option value="">년도선택</option>
           </select>
 
           <input
             type="button"
-            class="text-white px-4 rounded-md bg-violet-500 cursor-pointer"
+            class="text-white px-4 py-1 rounded-md bg-violet-500 cursor-pointer"
             onclick="selectedControl();"
             value="검색"
           />
@@ -91,6 +65,6 @@
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7c30e7a6560a8228b59fd8ed164d27de&libraries=clusterer"
     ></script>
-    <script src="main.js"></script>
+    <script src="main.js?v=20250123"></script>
   </body>
 </html>

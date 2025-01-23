@@ -4,7 +4,7 @@ const axios = require("axios");
 const app = express();
 
 require("dotenv").config();
-app.set("port", process.env.PORT || 4000);
+app.set("port", process.env.PORT || 80);
 API_KEY = process.env.API_KEY; // 환경 변수에서 API 키를 읽기
 //console.log(process.env.PORT);
 
@@ -15,8 +15,7 @@ app.use(express.static("public"));
 app.get("/api/kakaomap", async (req, res) => {
   const yearVal = req.query.yearVal;
   const guGunVal = req.query.guGunVal;
-  console.log(">> api/kakaomap yearVal : " + yearVal);
-  console.log(">> api/kakaomap guGunVal : " + guGunVal);
+  console.log(">> api/kakaomap : " + guGunVal + ", " + yearVal);
 
   const apiUrl = `https://apis.data.go.kr/B552061/frequentzoneBicycle/getRestFrequentzoneBicycle?ServiceKey=${API_KEY}&searchYearCd=${yearVal}&siDo=27&guGun=${guGunVal}&type=json&numOfRows=10&pageNo=1`;
 
@@ -38,5 +37,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(app.get("port"), () => {
-  console.log(`서버 실행 : http://localhost:${app.get("port")}`);
+  console.log(`서버 실행 port : ${app.get("port")}`);
 });

@@ -62,7 +62,7 @@ async function getKakaoMap(guGunVal, yearVal) {
   console.log("getKakaoMap guGunVal : " + guGunVal + " yearVal :" + yearVal);
 
   const baseURL = window.location.origin.includes("localhost")
-    ? "http://localhost:4000"
+    ? "http://localhost:80"
     : "https://vercel.app";
 
   console.log(">> baseURL : " + baseURL);
@@ -147,6 +147,9 @@ function mapView(mapData) {
     // infowindow.open(map, marker);
     markers.push(marker);
   }
+
+  // 검색 결과 첫번째 데이터 위치 이동
+  setCenter(mapData[0][1], mapData[0][2]);
 
   // 클러스터러에 마커들을 추가합니다
   clusterer.addMarkers(markers);
