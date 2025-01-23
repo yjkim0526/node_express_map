@@ -63,7 +63,7 @@ async function getKakaoMap(guGunVal, yearVal) {
 
   const baseURL = window.location.origin.includes("localhost")
     ? "http://localhost:80"
-    : "https://vercel.app";
+    : "http://www.koiforever.shop";
 
   console.log(">> baseURL : " + baseURL);
   const url = new URL(`${baseURL}/api/kakaomap`);
