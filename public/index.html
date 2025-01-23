@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>자전거 교통사고 다발지역 정보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      #map {
+        width: 70%;
+        height: 600px;
+        margin-top: 10px;
+        border: 1px solid;
+        border-color: darkgray;
+      }
+
+      @media (max-width: 768px) {
+        #map {
+          width: 80%;
+          height: 500px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        #map {
+          width: 80%;
+          height: 400px;
+        }
+        #main_search {
+          font-size: small;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="p-6">
+      <div class="text-sm md:text-xl font-bold p-2">
+        자전거 교통사고 다발지역 정보
+      </div>
+      <form id="frm">
+        <div id="main_search" class="lg:flex gap-4">
+          <label id="siDo" class="p-2" for="radius" value="27"
+            >대구광역시</label
+          >
+
+          <select
+            id="gugun"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option selected>구군선택</option>
+            <option value="200">남구</option>
+            <option value="290">달서구</option>
+            <option value="710">달성군</option>
+            <option value="140">동구</option>
+            <option value="230">북구</option>
+            <option value="170">서구</option>
+            <option value="260">수성구</option>
+            <option value="110">중구</option>
+            <option value="720">군위군</option>
+          </select>
+          <select
+            id="year"
+            class="inline-flex w-28 justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            aria-label="Default select example"
+          >
+            <option value="" selected>년도선택</option>
+          </select>
+          <input
+            type="button"
+            class="text-white px-4 rounded-md bg-violet-500 cursor-pointer"
+            onclick="selectedControl();"
+            value="검색"
+          />
+        </div>
+
+        <div class="lg:flex gap-4">
+          <div id="map"></div>
+          <div>
+            <div
+              id="map_cnt"
+              class="py-2 px-4 divide-slate-300 font-bold"
+            ></div>
+            <ul id="map_list" class="py-2 px-4"></ul>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7c30e7a6560a8228b59fd8ed164d27de&libraries=clusterer"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
